@@ -126,9 +126,9 @@ def f(x,k,e,N):
 
 looking at the function g it's just the iterative pow function so we can replace it with the python's `pow(x,e,N)`. so what `f(x,k,e,N)` does is computes `x<sup>e</sup>` mod N then multiplies it with k and takes modulo N again okay so we know that this is happening iteratively for an insanely huge number. So let's try and simplify this expression, 
 
-```
+
 (x<sup>e</sup>*k mod N)<sup>e</sup>*k mod N).... ==> x<sup>e<sup>myBigNumber</sup></sup> * k <sup> 1 + e + e<sup>2</sup> ... e<sup>myBigNumber-1</sup></sup>
-```
+
 since we have the phi we can calculate `d = modinv(pow(e,i,phi),phi)` easily but we raise to the d as it is as we have d multiplied as well so we have to compute the sum of the Geometric Progression modulo phi first and then divide it by k, since we know that `gcd(e-1,phi) >= 2` is garunteed, so we need another method to compute the summation, there exists an elegant method to do that indeed it computes the sum of the GP series modulo N in log(myBigNumber) which is 1337 :D. here's the snippet,
 
 ```python
