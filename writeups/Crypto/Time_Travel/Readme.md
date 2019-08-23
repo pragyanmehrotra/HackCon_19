@@ -144,7 +144,7 @@ def S(a,n,m):
 
 So here's the final code to solve the challenge
 
-```
+```python
 from Crypto.Util import *
 import gmpy
 import random
