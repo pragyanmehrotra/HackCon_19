@@ -202,7 +202,6 @@ def decode(x):
 	return s
 
 def f(x,k,e,N):
-	#x = baseN(x,9)
 	x = pow(x,e,N)
 	x *= k
 	x %= N
